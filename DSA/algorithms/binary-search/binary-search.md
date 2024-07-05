@@ -5,4 +5,6 @@ For example, if given a list with about 100 elements and you're looking for an e
 
 For a binary search, instead of going through each item one by one, you start from the middle position, and then go to the next middle position, until the exact item position is found. So with 100 elements start from 50, then 25, then 13, then 7, then 4, 2, and 1. This takes 7 steps for the 100 elements in the worst case scenario. The same approach will be used for any number of elements.
 
-The mathematical model is this: for any list of length `n`, a binary search will take `log2n` steps to run in the worst case, whereas a simple search will take `n` steps.
+The mathematical model is this: for any list of length `n`, a binary search will take `log2n` steps to run in the worst case, whereas a simple search will take `n` steps. See logs as the reverse exponents. e.g. 2^3 = 8 so log2(8) = 3.*(how many 2s do we multiply to get 8)*
+
+For Big O notation purposes, binary search has a **logarithmic** running time: `O(log n)`. 
