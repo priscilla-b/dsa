@@ -16,4 +16,18 @@ def countdown(n):
         countdown(i-1) # recursive case
 ```
 
-### The stack
+### The call stack
+**A stack** is a data structure that allows you to add an item to its top(push) and remove an item from the same top (pop). Operates on a last in first out (LIFO) principle.
+
+Your computer uses a call stack to store functions and their variables in memory whenever a function call is made. the most recent function call is allocated to the top of the memory stack. 
+
+When function calls are being returned, the function at the topmost point of the stack gets returned first, which means the function that was most recently called (the inner function) gets returned first and the order follows until the first function that was called (outer function) gets returned.
+
+*In other words, when you call a function from another function, the calling function is paused in a partially completed state.*
+
+
+### The call stack with recursion
+Recursive functions use the call stack as a way to iterate through items or function calls to perform repeatable operations instead of having a dedicated array of items like loops(for, while) need.
+While this is convenient, there's also a cost associated with saving numerous function calls in memory at a time.
+If your call stack is too long, you might have to rewrite your code to use loops *tail recursion* (not supported by all languages)
+
