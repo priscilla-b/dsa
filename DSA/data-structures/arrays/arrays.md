@@ -7,6 +7,6 @@ There's also a chance that the computer might run out of memory to store a list 
 
 If you want to insert an element in the middle of an array for example, you'd have to change the position of all the elements that will come after it to reflect the increase in size of the array. Same logic works for deletes.
 
-However, because you know the position(index) of each item in an array, it's easy to access items directly (random access), without having to go through each element one at a time like with linked lists.
+However, because you know the position(index) of each item in an array, it's easy to access items directly (random access), without having to go through each element one at a time like with linked lists. Because of this property of arrays, they are used more compared to linked lists.
 
 Arrays have a constant reading time (O(1)), but a linear insertion time (O(n)).

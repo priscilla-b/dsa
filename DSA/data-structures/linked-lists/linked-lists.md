@@ -8,3 +8,5 @@ Adding an item to a linked list is faster compared to arrays since the new items
 The disadvantage with linked list is that it's slower to access a single item, since you don't know it's exact position in the list. You have to go through each item in the linked list to get the one you're looking for (sequential access).
 
 Linked lists have a constant insertion time (O(1)) but a linear reading time (O(n))
+
+A work around the slowness of random access of linked lists and the slowness of insertion of arrays is to have a combined data structure (an array of linked lists). Each element in an array will contain a linked list, making it easier to search within linked lists, and faster to insert in arrays.
