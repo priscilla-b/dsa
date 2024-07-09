@@ -10,3 +10,5 @@ If you want to insert an element in the middle of an array for example, you'd ha
 However, because you know the position(index) of each item in an array, it's easy to access items directly (random access), without having to go through each element one at a time like with linked lists. Because of this property of arrays, they are used more compared to linked lists.
 
 Arrays have a constant reading time (O(1)), but a linear insertion time (O(n)).
+
+All elements in an array should be the same type(all ints, all strings, etc.)
