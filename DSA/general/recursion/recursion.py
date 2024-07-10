@@ -37,3 +37,16 @@ def factorial(n):
     return 1
 
 print(factorial(5))
+
+
+def sum_numbers(arr):
+  sum = arr[0]
+  if len(arr) == 0:
+    return 0
+  else:
+    del arr[0]
+    sum += sum_numbers(arr[0])
+    return sum
+
+print(sum_numbers([4, 5, 8, 9, 2]))
+

@@ -31,3 +31,17 @@ Recursive functions use the call stack as a way to iterate through items or func
 While this is convenient, there's also a cost associated with saving numerous function calls in memory at a time.
 If your call stack is too long, you might have to rewrite your code to use loops *tail recursion* (not supported by all languages)
 
+
+
+## Divide and Conquer (D & C)
+Recursive algorithm. Generally useful for solving problems where a clear, straight-forward solution does not look possible.
+According to D&C, with every recursive call, you have to reduce your problem.
+
+Strategy:
+- first figure out the base case -> the simplest possible case
+- divide or decrease your problem until it becomes the base case
+
+For example, if you want to divide a rectangular piece of land into square plots of the same size, you can first start by figuring out the largest square of land you can use as a plot (base case).
+You can now divide your plot of land to ensure that all the plots meet the meet case.
+
+D&C is not a simple algorithm that you can apply to all problems, but rather a way to think about a problem
