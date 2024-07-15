@@ -16,6 +16,8 @@ def countdown(n):
         countdown(i-1) # recursive case
 ```
 
+Note: Having a great understanding of recursion helps with writing and understanding functional languages like `Haskell` that do not use loops.
+
 ### The call stack
 **A stack** is a data structure that allows you to add an item to its top(push) and remove an item from the same top (pop). Operates on a last in first out (LIFO) principle.
 

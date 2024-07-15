@@ -40,13 +40,23 @@ print(factorial(5))
 
 
 def sum_numbers(arr):
-  sum = arr[0]
+  # using divide and conquer (D&C) method
+  # step 1: identify the base case: an empty array. i.e. it will
+  # it's easy to know the sum of an empty array (0)
+  sum = 0
   if len(arr) == 0:
-    return 0
-  else:
-    del arr[0]
-    sum += sum_numbers(arr[0])
     return sum
 
-print(sum_numbers([4, 5, 8, 9, 2]))
+  # step 2: move closer to the base case with every recursive call
+  # in this case, reducing the elements in the arr passed until 
+  # you reach an empty array
+  sum = arr.pop(0) + sum_numbers(arr)
+  return sum
+ 
+
+print(sum_numbers([2, 4, 3, 2, 1, 4]))
+
+
+def find_largest_recursion(arr):
+  pass
 

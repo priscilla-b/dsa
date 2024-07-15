@@ -7,7 +7,7 @@ def binary_search(list, item):
 
     while low <= high:
         # as long as there's a range between our low and high point,
-        # item has still not been located, so we need to keep guess
+        # item has still not been located, so we need to keep guessing
 
         mid = (low + high) // 2
         guess = list[mid]
