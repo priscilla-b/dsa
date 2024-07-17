@@ -57,6 +57,51 @@ def sum_numbers(arr):
 print(sum_numbers([2, 4, 3, 2, 1, 4]))
 
 
-def find_largest_recursion(arr):
-  pass
+def find_largest_recursion(arr, largest=None):
+
+  if largest is None:
+    largest = arr[0]
+  if len(arr) == 1:
+    return largest
+  
+  if largest < arr[1]:
+     largest = arr[1]
+  return find_largest_recursion(arr[1:], largest)
+
+
+def max(list):
+ 
+  if len(list) == 2:
+    return list[0] if list[0] > list[1] else list[1]
+  sub_max = max(list[1:])
+  return list[0] if list[0] > sub_max else sub_max
+
+
+# updating to handle edge cases
+def max_update(list):
+
+  def helper(list):
+    if len(list) == 2:
+      return list[0] if list[0] > list[1] else list[1]
+    sub_max = helper(list[1:])
+    return list[0] if list[0] > sub_max else sub_max
+    
+
+  if len(list) == 0:
+    return None
+  if len(list) == 1:
+      return list[0]
+  
+  return helper(list)
+
+  
+
+
+
+print(find_largest_recursion([6, 3,8, 2, 9, 5]))
+
+print(max_update([6, 3,8, 2, 9, 5]))
+
+
+  
 
