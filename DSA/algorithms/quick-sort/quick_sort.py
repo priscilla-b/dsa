@@ -7,17 +7,25 @@ def quick_sort(arr):
     
     # picking the first element of the array as the pivot
     pivot = arr[0]
+    pivot_arr = [pivot] 
+    # keeping pivot in an array so that i can just add up all arrays
+    # will also help me add elements that are equal to the pivot in the same array
+    # so that repeated elements can still show up in the final sorted array
 
     # partition the array
     less_arr = []
     greater_arr = []
-    for elem in arr:
+    
+    for elem in arr[1:]:
+    # don't include pivot in array being looped through to avoid repeated checking
         if elem < pivot:
             less_arr.append(elem)
-        if elem > pivot:
+        elif elem == pivot:
+            pivot_arr.append(elem)
+        else:
             greater_arr.append(elem)
 
-    return quick_sort(less_arr) + [pivot] + quick_sort(greater_arr)
+    return quick_sort(less_arr) + pivot_arr + quick_sort(greater_arr)
 
 
 # case 1: empty array
