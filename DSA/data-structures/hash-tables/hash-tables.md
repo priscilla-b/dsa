@@ -1,26 +1,30 @@
-## Hash Tables
+# Hash Tables
+
 The hash table data structure combines **hash functions** and **arrays**.
 
 ***A hash function*** is a function that takes a string as an input and returns a number.
 Hash functions map strings to numbers.
 Has the following requirements:
+
 - needs to be consistent. same value should be returned for same input at all times
 - every input should be mapped to a different output
 
 When combined with arrays, the output of the hash function represents the index of the arrays. These indexes are then used as markers for the items stored in the arrays.
-So basically, a hash function input maps to an index, and then the index is the storage location of a value. 
+So basically, a hash function input maps to an index, and then the index is the storage location of a value.
 This combination represents a hash table.
 When accessing items in a hash table, you just need to pass the input(key) passed to the hash function, and the value stored with that input will be retrieved by the hash function using its index.
 
 While arrays and linked lists map data straight to memory, hash tables are smarter and use hash functions to intelligently figure out where to store the data.
 
-Most programming languages come with hash tables already implemented. 
+Most programming languages come with hash tables already implemented.
 In python, they're called `dictionaries`
 
 Creating a hash table in python
+
 ```py
 # create an empty hash table
-book = new dict()
+book = new dict()  # or book = {}
+
 
 # add new items 
 book["apple"] = 0.67
@@ -33,4 +37,18 @@ print(book["milk"])
 #  returns 1.49(value)
 ```
 
+## Use Cases
 
+1. For lookups  
+2. For preventing duplicate entries, since keys are unique
+3. For caching. Hash tables can store cache data, which can be quickly retrieved whenever needed
+
+## Collisions
+
+Sometimes hash functions do not always efficiently assign keys to slots in the array.
+It's possible that multiple keys can be assigned to the same slot by a hash function, causing **collisions**.
+
+A work-around for collisions is to start a new linked list in slot that has multiple keys assigned to it, so that previous key's values are not overwritten.
+However, performance can get slow if there are too many keys assigned to the same slot, since linked lists are slow to search through.
+
+A good hash function, however, will give a few collisions
