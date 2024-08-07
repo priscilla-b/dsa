@@ -52,3 +52,30 @@ A work-around for collisions is to start a new linked list in slot that has mult
 However, performance can get slow if there are too many keys assigned to the same slot, since linked lists are slow to search through.
 
 A good hash function, however, will give a few collisions
+
+## Performance
+
+In the average case, hash tables take `O(1)` time for everything.
+In the worst case however, they take `O(n)` time. How?
+Hash tables are as fast as arrays at searching(getting a value at an index), and as fast as linked lists at inserts and deletes.
+
+The worst case performance for hash tables happen when there are collisions.
+To avoid collisions in hash tables you need two things:
+
+- a good load factor
+- a good hash function
+
+### Load factor
+
+This refers to the number of items in the hash table divided by the total number of slots. E.g. a load factor of `2/5` means out of 5 empty slots in a hash table, 2 are occupied.
+
+Having a load factor > 1 means there are more items than slots, and therefore more slots need to be added. Known as ***resizing***.
+
+A good rule of thumb is to resize whenever load factor is greater than `0.7`.
+To resize, you need to create a new array that's bigger than your original array and then re-insert all the items from the original array unto this new array. As a rule of thumb, the new array can be twice the size of the original one.
+
+Ideally, you don't want to resize too often since they can be expensive.
+
+### A good hash function
+
+A good hash function distributes values in the array evenly, while a bad one groups values together and produces a lot of collisions.
