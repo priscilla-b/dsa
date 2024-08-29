@@ -1,2 +1,2 @@
 # dev-notes
-Notes on everything I'm learning as a software developer
+Data structure and algorithm notes and practices from books, leetcode, etc.
