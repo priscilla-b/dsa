@@ -44,3 +44,6 @@ solution = Solution()
 # print(solution.twoSum([3, 3], 6))
 
 print(solution.twoSumOpt([3, 2, 11, 7, 15], 9))
+
+
+# source: https://leetcode.com/problems/two-sum/description/
