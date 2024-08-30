@@ -21,18 +21,22 @@ class Solution(object):
 
         if len(s) == 0:
             return 0
+        
         num = r_dict[s[0]]
         if len(s) == 1:
             return num
     
         num_2 = r_dict[s[1]]
         if num < num_2:
-            num = num_2 -num
+            # when there's a subtraction situation, treat the two numbers
+            # as one and add the result of their subraction to the final number
+            # since the two numbers are treated as one, they should both be skipped
+            return num_2 - num + self.helper(s[2:], r_dict)
         else:
-            num += num_2
+            return num + self.helper(s[1:], r_dict)
 
         
-        return num + self.helper(s[2:], r_dict)
+        
 
 
 
