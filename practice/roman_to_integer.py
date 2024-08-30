@@ -15,21 +15,29 @@ class Solution(object):
             "M": 1000
         }
 
+        return self.helper(s, r_dict)      
+
+    def helper(self, s, r_dict):
+
+        if len(s) == 0:
+            return 0
+        num = r_dict[s[0]]
         if len(s) == 1:
-            return r_dict[s]
-        
-        num = 0
-        if len(s) == 2:
-            num_1 = r_dict[s[0]]
-            num_2 = r_dict[s[1]]
-            if num_1 < num_2:
-                num = num_2 - 1
-            else:
-                num = num_1 + num_2
             return num
+    
+        num_2 = r_dict[s[1]]
+        if num < num_2:
+            num = num_2 -num
+        else:
+            num += num_2
+
         
-        return num + self.romanToInt(s[1:])
+        return num + self.helper(s[2:], r_dict)
+
 
 
 solution = Solution()
-print(solution.romanToInt('DCLIX'))
+# print(solution.romanToInt('DCLIX'))
+# print(solution.romanToInt('CLVIII'))
+print(solution.romanToInt('MCMXCIV'))
+
