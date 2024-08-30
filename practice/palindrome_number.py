@@ -12,15 +12,24 @@ class Solution(object):
         return str_x[::-1] == str_x
     
     def isPalindromeOpt(self, x):
-        # partition x into two and check if each side is equal
-        str_x = str(x)
-        part_1 = str_x[:len(str_x)//2 +1]
-        part_2 = str_x[len(str_x)//2:]
-        return  part_1 == part_2
+        # partition x into two, reverse one half, and check if it's 
+        # equal to the other half
+        if x < 0 or (x % 10 == 0 and x != 0):
+            return False
+        
+        reversed_half = 0
+        while x > reversed_half:
+            reversed_half = reversed_half * 10 + x % 10
+            x //= 10
+
+        # Step 3: Compare the original number (or its half) with the reversed half
+        return x == reversed_half or x == reversed_half // 10
+
+        
     
 
 solution = Solution()
-print(solution.isPalindromeOpt(131))
+print(solution.isPalindromeOpt(12641))
         
         
     
