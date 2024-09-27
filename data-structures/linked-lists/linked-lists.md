@@ -71,5 +71,10 @@ class LinkedList:
         current_node.next = new_node
         return
     
-       
+
+linked_list = LinkedList()
+linked_list.insert_at_start(12)
+linked_list.insert_at_start(15)
+linked_list.insert_at_start(18)
+linked_list.insert_at_index(20, 1)
 ```
