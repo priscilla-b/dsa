@@ -32,10 +32,44 @@ class LinkedList:
     # insertion at beginning of node
     def insert_at_start(self, data):
         new_node = Node(data)  # create a new node with the given data
-        if self.head is None:
+        if self.head is None:  
+            # set the new node as the head if the linked list is empty(head is none)
             self.head = new_node
             return
         else:
+            # if the node has a head then set the existing head as the next item 
+            # and set the new node as the new head of the linked list
             new_node.next = self.head
             self.head = new_node
+
+    # insert node at a given index
+    def insert_at_index(self, data, index):
+        if (index == 0):
+            self.insert_at_start(data)
+            return
+
+        # since index > 0, we have to traverse the entire linked list
+        # to find the node at the position we want to insert
+        current_node = self.head
+        current_position = 0  # we can only start from the head, so using 0 as current position
+
+        while (current_position < index):
+            # if we're not yet at the index position, then move to the next node
+            # and increment the current position by 1 to reflect the movement to the next node
+            current_node = current_node.next
+            current_position += 1
+
+            if current_node == None:
+                # we're at the end of the linked list, so that index is 
+                # not present in the linked list
+                print('index not present')
+                return
+
+
+        new_node = Node(data)
+        new_node.next = current_node.next
+        current_node.next = new_node
+        return
+    
+       
 ```
