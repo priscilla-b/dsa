@@ -1,8 +1,8 @@
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
 class Solution:
     def merge_two_lists(self, list1: ListNode, list2: ListNode) -> ListNode:
@@ -28,6 +28,22 @@ class Solution:
 
      
 
+def list_to_linked_list(lst:list) -> ListNode:
+        if not lst:
+            return None
+        
+        head = ListNode(lst[0])
+        current = head
+        for val in list[1:]:
+            current.next = ListNode(val)
+            current = current.next
+        return head
+
+def print_linked_list(lst:ListNode):
+    pass
+
 
 solution = Solution()
-solution.merge_two_lists([1, 2, 4], [1, 3, 4])
+list_to_linked_list([1, 2, 4])
+
+# solution.merge_two_lists([1, 2, 4], [1, 3, 4])
