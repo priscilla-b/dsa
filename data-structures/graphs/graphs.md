@@ -22,3 +22,7 @@ graph["bob"] = ["anuj", "peggy"]
 # anuj has no neighbors
 graph["anuj"] = []
 ```
+
+When a graph has items that follow each other in an order, it's called a ***topological graph***
+
+**Trees** are special graphs where all the edges point downward with no edge pointing back up.

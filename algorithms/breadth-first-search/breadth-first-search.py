@@ -4,22 +4,26 @@ from collections import deque
 # going to search through all neighbors until I get one who sells mangos
 
 def breadth_first(graph:dict, start:str):
-
     # create a queue to add the node values for search
     search_queue = deque()
-
     # add initial list of people to search using the starting point
     search_queue += graph[start]
 
-    while search_queue:
+    # keeping a list to tracked people who have been searched
+    searched = []
 
+    while search_queue:
         current = search_queue.popleft()
 
-        if(person_is_seller(current)):
-            return current
-        
-        # if person is not mango seller, add all their neighbors to queue
-        search_queue += graph[current]
+        # avoid searching someone who has been searching again to prevent
+        # possible infinite loops
+        if not current in searched:
+            if(person_is_seller(current)):
+                return current      
+            # if person is not mango seller, add all their neighbors to queue
+            search_queue += graph[current]
+            searched.append(current)
+
 
 
 
