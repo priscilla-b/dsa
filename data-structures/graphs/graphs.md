@@ -22,6 +22,10 @@ graph["bob"] = ["anuj", "peggy"]
 # anuj has no neighbors
 graph["anuj"] = []
 ```
+A **directed graph** is a graph with arrows, with the relationship following the direction of the arrows. e.g. (rama -> adit could mean "rama owes adit money")
+
+An **undirected graph** have no arrows and the relationship goes both ways
+
 
 When a graph has items that follow each other in an order, it's called a ***topological graph***
 
