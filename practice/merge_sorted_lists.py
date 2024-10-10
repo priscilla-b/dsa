@@ -1,8 +1,6 @@
-# Definition for singly-linked list.
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+from _helper import Helper
+
+ListNode = Helper.ListNode
 
 class Solution:
     def merge_two_lists(self, list1: ListNode, list2: ListNode) -> ListNode:
@@ -41,41 +39,17 @@ class Solution:
         # that was added (0) when the dummy node was created
         return node.next
 
-     
-# not needed in leetcode
-def list_to_linked_list(lst:list) -> ListNode:
-    if not lst:
-        return None
-    
-    head = ListNode(lst[0])
-    current = head
-    for val in lst[1:]:
-        # since current is also pointing to head,
-        # when current.next is updated, head.next is also updated
-        # this is because a custom class like ListNode is mutable 
-        # (same a lists and dictionaries). as a result  If you modify one reference 
-        # to a mutable object, all references to that object see the change.
-        current.next = ListNode(val)
-        current = current.next
-    return head
 
-# Helper function to print the linked list for debugging
-def print_linked_list(node):
-    current = node
-    values = []
-    while current:
-        values.append(current.val)
-        current = current.next
-    print(values)
+helper = Helper()
 
 
-list1 = list_to_linked_list([1, 2, 4])
-list2 = list_to_linked_list([1, 3, 4])
+list1 = helper.list_to_linked_list([1, 2, 4])
+list2 = helper.list_to_linked_list([1, 3, 4])
 
 
 solution = Solution()
 merged_list = solution.merge_two_lists(list1, list2)
-print_linked_list(merged_list)
+helper.print_linked_list(merged_list)
 
 
 

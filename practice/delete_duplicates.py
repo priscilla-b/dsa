@@ -1,8 +1,6 @@
-# Definition for singly-linked list.
-class ListNode:
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+from _helper import Helper
+
+ListNode = Helper.ListNode
 
 class Solution:
     def delete_duplicates(self, head:ListNode) -> ListNode:
@@ -24,20 +22,10 @@ class Solution:
 
 
 
-def list_to_linkedlist(lst:list) -> ListNode:
-    if not lst:
-        return None
-    
-    head = ListNode(lst[0])
-    current = head
-    for val in lst[1:]:
-        current.next = ListNode(val)
-        current = current.next
-
-    return head
+helper = Helper()
 
 
-head = list_to_linkedlist([1, 1, 2])
+head = helper.list_to_linkedlist([1, 1, 2])
 
 solution = Solution()
 solution.delete_duplicates(head)
