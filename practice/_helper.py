@@ -23,7 +23,7 @@ class Helper():
             current = current.next
         return head
     
-    def print_linked_list(node:ListNode):
+    def print_linked_list(self, node:ListNode):
         current = node
         values = []
         while current:
