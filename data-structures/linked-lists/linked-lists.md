@@ -1,5 +1,16 @@
 # Linked Lists
 
+## Terminology
+- **Node**: a container for data in a linked list
+- **Next**: the node that another node points to
+- **Tail**: the last node in a linked list. It's next pointer points to nothing
+- **Head**: the first node in a linked list
+
+A linked list is simply a connected list of elements (stored as nodes).
+
+A linked list is considered as an **ordered** (doesn't mean sorted by value) data structure because the nodes are arranged in a specific sequence, with each element having a relative position to the others. Elements are maintained in an order based on their insertion or position.
+
+## Linked lists vs arrays
 With linked lists, items can be anywhere in memory since they don't need to be stored next to each other like in arrays.
 Each item stores the address of the next item in the list, linking the memory addresses together.
 
@@ -11,11 +22,18 @@ Linked lists have a constant insertion time (O(1)) but a linear reading time (O(
 
 A work around the slowness of random access of linked lists and the slowness of insertion of arrays is to have a combined data structure (an array of linked lists). Each element in an array will contain a linked list, making it easier to search within linked lists, and faster to insert in arrays.
 
-## Implementation with Python
 
-A linked list consits of nodes, and each node has two elements: the data and the pointer to the next node.
+## Implementation
+A linked list consists of nodes, and each node has two elements: the data and the pointer to the next node.
+
+If you need to reference a linked list, you only need to use the head node. You can get the other elements in the head node by accessing its next point and so on.
+
 ![linked-list](linked_list.png)
 [source](https://www.geeksforgeeks.org/python-linked-list/)
+
+If you need to traverse a linked list, you just need a variable to store the current node. You update that variable by setting it to its next at every iteration.
+
+### Python example
 
 ```py
 
