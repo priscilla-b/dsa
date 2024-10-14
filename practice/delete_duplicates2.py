@@ -5,32 +5,50 @@ ListNode = Helper.ListNode
 
 
 class Solution:
-    def deleteDuplicates(self, head: ListNode) -> ListNode:
 
-        # keeping a dummy node to cater for instances where the head itself 
-        # might need to be deleted  
-        dummy = ListNode()
-
+    def deleteDuplicates(self, head:ListNode) -> ListNode:
+        set_ = set()
         current = head
+        output = ListNode()
 
-        # storing the previous node so that i can use it if current node needs to be removed
-        prev = dummy  
-
-
-        while current and current.next:
-            if current.val == current.next.val:
-                # since both are duplicates remove current and current.next 
-                # by setting it to previous node
-                current = current.next
-                prev.next = current.next
-            else:
-                prev = current
-
+        while current:
+            val = current.val
+            if val not in set_:
+                set_.add(val)
+                output.next = current
+                
             current = current.next
+
+        return output.next
+
+            
+
+
+    # def deleteDuplicates(self, head: ListNode) -> ListNode:
+
+    #     # keeping a dummy node to cater for instances where the head itself 
+    #     # might need to be deleted  
+    #     dummy = ListNode()
+    #     dummy.next = head  # Link dummy node to head to begin tracking
+
+    #     current = head
+    #     # storing the previous node so that i can use it if current node needs to be removed
+    #     prev = dummy  
+
+
+    #     while current and current.next:
+    #         if current.val == current.next.val:
+    #             # since both are duplicates remove current and current.next 
+    #             # by skipping the current and its next node
+    #             current = current.next.next
+    #             prev.next = current  # reset prev.next to current to also skip the duplicates in prev
+    #         else:
+    #             prev = current
+    #             current = current.next
                
 
         
-        return head
+    #     return dummy.next
 
 
 
