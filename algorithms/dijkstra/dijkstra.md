@@ -5,7 +5,7 @@ If it did, there could be other paths that might not necessarily be the shortest
 This is what Dijktra's algorithm does - finds the fastest path between two points.
 
 
-## Implementation
+## Implementation Steps
 
 To go from a source node to a destination node on a graph:
 1. **Initialize a priority queue**: a list of all nodes on the graph and their distances (from start), sorted from lowest to the highest distance. 
