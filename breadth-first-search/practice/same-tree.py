@@ -7,7 +7,7 @@ TreeNode = helper.TreeNode
 class Solution:
     def is_same_tree(self, p: TreeNode, q: TreeNode) -> bool:
         
-        # deque is a double-ended queue that enables quick inserts and deletes
+        # deque(pronounced deck) is a double-ended queue that enables quick inserts and deletes
         # at both ends of the queue. this will enable us to traverse
         # a node and its left and right more efficiently
         queue_p = deque([p])
@@ -48,8 +48,8 @@ class Solution:
 
 
 
-p = helper.list_to_binary_tree([])
-q = helper.list_to_binary_tree([])
+p = helper.list_to_binary_tree([1, 2, 3])
+q = helper.list_to_binary_tree([1, 2, 3])
 
 solution = Solution()
 print(solution.is_same_tree(p, q))

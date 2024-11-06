@@ -16,6 +16,11 @@ class Helper():
             return None
         
         root = self.TreeNode(arr[0])  # Start with the first element as the root
+        
+        # The queue keeps track of nodes that have been added to the tree but
+        # still need to have their children populated. This allows us to process nodes
+        # sequentially from the queue, so that both left and right children
+        # are added in level-order (breadth-first) to match the binary tree structure.
         queue = deque([root])
         i = 1
         
