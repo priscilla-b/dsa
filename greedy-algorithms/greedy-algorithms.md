@@ -41,3 +41,16 @@ If you have 4 cities, and you pick a start city, you have 3 cities left, which a
 From this we can draw a pattern that the relationship between the number of cities and the possible routes to be covered is a **factorial** relationship. i.e routes = n!, where n is the number of cities.
 
 If you have 10 cities, 10! is 3,628,800. This makes the number of possible routes become large too quickly, making it really really slow to solve for an optimum solution.
+
+A good approximation for this problem is this:
+- pick an arbitrary start city
+- each time the traveling salesperson has to pick the next city, pick the closest unvisited city.
+
+
+### Identifying NP-complete problems
+- algorithm(solution) runs quickly with small number of inputs but really slows down when input size increases
+- problems involving all combinations of something are usually np-complete
+- if you have to calculate "every possible version" of x because you can't break it down into smaller problems
+- if your problem involves a sequence (such as sequence of cities like in traveling salesperson) and it's hard to solve
+- if your problem involves a set(like a set of radio stations) and it's hard to solve
+- if you can restate your problem as the set-covering problem or the traveling-salesperson problem
