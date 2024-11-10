@@ -7,16 +7,17 @@ TreeNode = Helper.TreeNode
 class Solution:
     def invertTree(self, root: TreeNode) -> TreeNode:
         queue = deque([root])
+        if not root:
+            return root
         while queue:
             current = queue.popleft()
-            if current:
-
-                current.left, current.right = current.right, current.left
-                
-                if current.left:
-                    queue.append(current.left)
-                if current.right:
-                    queue.append(current.right)
+            
+            current.left, current.right = current.right, current.left
+            
+            if current.left:
+                queue.append(current.left)
+            if current.right:
+                queue.append(current.right)
         
            
             
