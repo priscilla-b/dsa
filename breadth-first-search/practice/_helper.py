@@ -29,14 +29,14 @@ class Helper():
             
             # Insert the left child
             if i < len(arr):
-                if arr[i]:
+                if arr[i] is not None:
                     current.left = self.TreeNode(arr[i])
                     queue.append(current.left)
                 i += 1
             
             # Insert the right child
             if i < len(arr):
-                if arr[i]:
+                if arr[i] is not None:
                     current.right = self.TreeNode(arr[i])
                     queue.append(current.right)
                 i += 1
