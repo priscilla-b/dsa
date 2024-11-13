@@ -42,3 +42,33 @@ class Helper():
                 i += 1
             
         return root
+    
+    
+    def binary_tree_to_list(self, root:TreeNode):
+        if not root:
+            return []
+         
+        values = [root.val]
+        queue = deque([root])
+ 
+        while queue:
+            current = queue.popleft()
+            if current.left:
+                values.append(current.left.val)
+                queue.append(current.left)
+            else:
+                values.append(None)
+                
+            if current.right:
+                values.append(current.right.val)
+                queue.append(current.right)
+            else:
+                values.append(None)
+        
+         # Remove trailing None values
+        while values and values[-1] is None:
+            values.pop()
+            
+        return values
+    
+            
