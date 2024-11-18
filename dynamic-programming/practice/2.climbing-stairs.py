@@ -4,12 +4,13 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
         """At any point in time, you can only take 1 or 2 steps at a time.
-        So say you're currently at step0 on your staircase and you want to take
-        4 steps in total, you can take 1 step to step1 or 2 steps to step2.
-        At step1, you can take 1 step to step 2 or 2 steps to step 3. At step2
-        you can take 1 step to step 3 or 2 steps to step 4. 
-        At step 3, you can take 1 step to step 4 but if you can't take 2 steps 
-        because you're contrained by 4 total steps.
+        So say you're currently at step0 on your staircase you only need to take 1 step to
+        get to step1. At step1, you can take 1 step to get to step2 or 2 steps to get to step3.
+        At step2, you can take 1 step to get to step3 or 2 steps to get to step4, and so on.
+        You could have also taken 2 steps to get to step2 from step0, and then from there taken 1 step
+        to get to step3 or 2 steps to get to step4.
+        From this, there are three ways to get to step3: 2 ways if you'd taken 1 step from step0 or 
+        1 way if you'd taken 2 steps from step0.
 
 
         Args:
