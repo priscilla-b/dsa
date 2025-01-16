@@ -12,17 +12,31 @@ class Solution:
         # the root of the node should then come from the middle
         # of a sorted array
         
+        if not nums:
+            return 
+        
         mid_i = len(nums)//2
         
         root = TreeNode(nums[mid_i])
-        current = root
         
-        # current.left = 
-        # create_tree(nums[1:], current.left)
+        if mid_i == 0:
+            return root
         
-        # def create_tree(nums, node):
-        #     current.val = nums[0]
-        #     return current
+        left = self.sorted_array_to_bst(nums[:mid_i])
+        right = self.sorted_array_to_bst(nums[mid_i:])
+        
+        root.left = left
+        root.right = right
+        
+        return root
+    
+
+helper = Helper()
+solution = Solution()
+bst = solution.sorted_array_to_bst([-10, -3, 0, 9, 5])
+print(helper.binary_tree_to_list(bst))
+       
+        
         
         
         
