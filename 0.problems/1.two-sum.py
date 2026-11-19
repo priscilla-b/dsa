@@ -38,7 +38,7 @@ class Solution(object):
     
     def twoSum2(self, nums, target):
         """
-        Standard solution using a hash map to store the complements of the numbers we have seen so far.
+        Standard solution using a hash map to store the numbers we have seen so far.
         :type nums: List[int]
         :type target: int
         :rtype: List[int]
