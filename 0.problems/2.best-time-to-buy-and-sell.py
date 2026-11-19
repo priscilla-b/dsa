@@ -19,12 +19,27 @@ class Solution:
         return max_profit
     
     def maxProfit(self, prices: list[int]) -> int:
+        """
+        Optimized solution: O(n) time complexity, O(1) space complexity
+        We can keep track of the minimum price we have seen so far, and the maximum profit we can make
+        by selling at the current price. 
+        Args:
+            prices (list[int]): list of prices of a stock on different days
+        Returns:
+            int: maximum profit that can be made from buying and selling the stock
+        """
         max_profit = 0
-        sell_prices = {i : prices[i] for i in range(1, len(prices))}
-        print(sell_prices)
-        for i in range(len(prices)-1):
-            current_profit = sell_prices[i+1] - prices[i]
-            max_profit = current_profit if current_profit > max_profit else max_profit
+        min_price = prices[0]
+        
+        for i in range(1, len(prices)):
+            price = prices[i]
+            current_profit = price - min_price
+
+            if current_profit > max_profit:
+                max_profit = current_profit
+
+            if price < min_price:
+                min_price = price
 
         return max_profit
 
